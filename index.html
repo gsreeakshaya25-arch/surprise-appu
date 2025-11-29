@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday Appu</title>
 
 <style>
@@ -76,144 +76,26 @@
         color: #ff4d6d;
     }
 
-    /* SECRET BUTTON + DROP PANEL (replaces old secret-btn) */
-    #open-fast-wrap {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        /* keep it visually under polaroids; tweak top to match your layout */
-        top: 520px;
-        z-index: 15;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        pointer-events: none; /* allow inner elements to control pointer */
-    }
-
-    #open-fast {
-        pointer-events: auto;
-        background: linear-gradient(180deg, #ff6b9a, #ff3d7a);
+    /* SECRET BUTTON — moved DOWN */
+    #secret-btn {
+        margin-top: 580px;  /* was 450px */
+        padding: 15px 30px;
+        background: #ff4d88;
         border: none;
+        border-radius: 25px;
         color: white;
-        padding: 12px 28px;
-        font-weight: 700;
-        border-radius: 28px;
-        box-shadow: 0 8px 20px rgba(255,77,120,0.18);
-        cursor: pointer;
-        transform: translateY(0);
-        transition: transform 220ms cubic-bezier(.2,.9,.3,1);
         font-size: 18px;
-        font-weight: 800;
-        pointer-events: auto;
-    }
-
-    #open-fast:active { transform: translateY(2px); }
-
-    /* sliding panel */
-    #open-panel {
-        position: absolute;
-        top: 72px; /* distance below the button */
-        left: 50%;
-        transform: translateX(-50%);
-        width: min(820px, 92vw);
-        background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,245,248,0.98));
-        border-radius: 14px;
-        padding: 18px;
-        box-shadow: 0 18px 50px rgba(220,30,90,0.12);
-        overflow: hidden;
-        max-height: 0;            /* collapsed */
-        opacity: 0;
-        transition: max-height 360ms cubic-bezier(.2,.9,.3,1), opacity 260ms ease;
-        display: grid;
-        gap: 12px;
-        align-items: start;
-        pointer-events: none;
-    }
-
-    /* panel open state */
-    #open-panel.open{
-        max-height: 420px; /* enough for content */
-        opacity: 1;
-        pointer-events: auto;
-    }
-
-    /* Message text */
-    #open-panel .panel-message {
-        font-family: 'Poppins', sans-serif;
-        font-size: 18px;
-        font-weight: 600;
-        color: #dd2b67;
-        padding: 0 6px;
-        text-align: left;
-    }
-
-    /* stickers row */
-    .stickers-row {
-        display: flex;
-        gap: 12px;
-        padding: 6px;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .sticker {
-        width: 78px;
-        height: 78px;
-        background: linear-gradient(180deg,#fff,#ffeef3);
-        border-radius: 16px;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        font-size: 38px;
-        box-shadow: 0 8px 18px rgba(200,40,120,0.12);
-        border: 4px solid rgba(255,255,255,0.8);
-        transform: translateY(0);
-        transition: transform 240ms ease;
+        font-weight: bold;
         cursor: pointer;
-        user-select: none;
+        display: none;
     }
-
-    /* little bounce on hover */
-    .sticker:hover { transform: translateY(-6px) rotate(-4deg); }
-
-    /* small helper: close X */
-    #open-panel .close-x {
-        position: absolute;
-        right: 10px;
-        top: 8px;
-        font-size: 18px;
-        color: #b43a66;
-        cursor: pointer;
-        padding: 6px;
-        border-radius: 8px;
-    }
-    #open-panel .close-x:hover { background: rgba(180,60,100,0.05); }
-
-    /* small note */
-    #open-panel .small-note {
-        padding:6px 10px;
-        color:#8b3a58;
-        font-weight:500;
-        text-align: left;
-    }
-
-    /* responsive tweaks */
-    @media (max-width: 520px) {
-        #open-fast-wrap { top: 600px; }
-        #open-panel { top: 72px; padding: 12px; }
-        .sticker { width: 64px; height: 64px; font-size: 32px; }
-        #open-fast { padding: 10px 20px; font-size: 14px; border-radius: 22px; }
-    }
-
 </style>
 </head>
 <body>
 
 <!-- POPUP -->
 <div id="popup">
-    your girl has a surprise for you 💗
+    your girl has a surprise for you 💗  
     <button id="enterBtn">ENTER</button>
 </div>
 
@@ -221,57 +103,33 @@
 
 <!-- POLAROIDS -->
 <div class="polaroid" id="p1">
-    <img src="WhatsApp Image 2025-11-28 at 20.12.36_f5572ad6.jpg" alt="p1">
+    <img src="WhatsApp Image 2025-11-28 at 20.12.36_f5572ad6.jpg">
     <div class="caption">Day 1 to forever 🫶</div>
 </div>
 
 <div class="polaroid" id="p2">
-    <img src="WhatsApp Image 2025-11-28 at 20.12.36_814efb0f.jpg" alt="p2">
+    <img src="WhatsApp Image 2025-11-28 at 20.12.36_814efb0f.jpg">
     <div class="caption">my heart ❤️</div>
 </div>
 
 <div class="polaroid" id="p3">
-    <img src="WhatsApp Image 2025-11-28 at 20.12.36_16b2eee8.jpg" alt="p3">
+    <img src="WhatsApp Image 2025-11-28 at 20.12.36_16b2eee8.jpg">
     <div class="caption">my safe place 🥰</div>
 </div>
 
-<!-- REPLACED: button + sliding panel -->
-<div id="open-fast-wrap" aria-live="polite">
-  <button id="open-fast" aria-expanded="false" aria-controls="open-panel">open this fasttt!</button>
-
-  <div id="open-panel" role="region" aria-hidden="true" aria-labelledby="open-fast">
-    <div class="close-x" id="open-panel-close" title="close">✕</div>
-
-    <div class="panel-message" tabindex="0">
-      Hey Appu 💖 — surprise! I made this just for you. Wishing you the sweetest day filled with laughter, hugs, and tiny stickers. Click any sticker to collect it — they’ll pop a little! 🎁
-    </div>
-
-    <div class="stickers-row" aria-hidden="false">
-      <!-- Emojis are used so no extra assets required; replace with images if you prefer -->
-      <div class="sticker" title="cute heart">💖</div>
-      <div class="sticker" title="sparkle">✨</div>
-      <div class="sticker" title="party">🎉</div>
-      <div class="sticker" title="cake">🍰</div>
-      <div class="sticker" title="smile">😊</div>
-      <div class="sticker" title="unicorn">🦄</div>
-    </div>
-
-    <div class="small-note">
-      ps: If you want these as PNG stickers instead of emoji, put your sticker files in the repo and replace the sticker content with &lt;img src="path/to/sticker.png" alt="sticker" style="width:100%;height:100%;object-fit:contain;border-radius:10px;"&gt;.
-    </div>
-  </div>
-</div>
+<button id="secret-btn">open this fasttt!</button>
 
 <!-- CONFETTI -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 <script>
+
 document.getElementById("enterBtn").onclick = () => {
     document.getElementById("popup").style.display = "none";
     document.querySelector("h1").style.display = "block";
 
     scatterPolaroids();
-    // show the button (it is in the DOM and positioned; no extra reveal needed)
+    document.getElementById("secret-btn").style.display = "inline-block";
 };
 
 function scatterPolaroids() {
@@ -295,82 +153,22 @@ function scatterPolaroids() {
 
     setTimeout(() => {
         p3.style.opacity = 1;
-        p3.style.top = "210px";
+        p3.style.top = "160px";  /* moved UP from 210px */
         p3.style.left = "65%";
         p3.style.transform = "rotate(-3deg)";
     }, 900);
 }
 
-/* Panel toggle + interactivity */
-(function(){
-  const btn = document.getElementById('open-fast');
-  const panel = document.getElementById('open-panel');
-  const closex = document.getElementById('open-panel-close');
-
-  function openPanel(){
-    // confetti like before
+document.getElementById("secret-btn").onclick = () => {
     confetti({
-      particleCount: 220,
-      spread: 90,
-      origin: { y: 0.6 }
+        particleCount: 250,
+        spread: 90,
+        origin: { y: 0.7 }
     });
 
-    panel.classList.add('open');
-    panel.setAttribute('aria-hidden','false');
-    btn.setAttribute('aria-expanded','true');
-    // focus the message for keyboard users
-    panel.querySelector('.panel-message').focus();
-  }
+    alert("Happyyy birthdayyyy bubu!!!❤️❤️❤️ you're always sooo special to me I wanted to make this cuteeee website for you coz you deserve the besttt🤌🏻\n\nI love you sooo much pattu😌❤️\nEvery year I'm gonna keep increasing my bar of celebrating your birthday and make it special for you!\n\nFor now this is the gift — once you come to India I'll give you another one 😋😘");
+};
 
-  function closePanel(){
-    panel.classList.remove('open');
-    panel.setAttribute('aria-hidden','true');
-    btn.setAttribute('aria-expanded','false');
-  }
-
-  btn.addEventListener('click', function(e){
-    if (panel.classList.contains('open')) closePanel();
-    else openPanel();
-  });
-
-  closex.addEventListener('click', closePanel);
-
-  // close if user clicks outside the wrap
-  document.addEventListener('click', function(ev){
-    const wrap = ev.target.closest('#open-fast-wrap');
-    if (!wrap && panel.classList.contains('open')) closePanel();
-  });
-
-  // keyboard escape to close
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closePanel();
-  });
-
-  // sticker interaction: small pop + "collected" visual
-  document.querySelectorAll('.sticker').forEach(s => {
-    s.addEventListener('click', () => {
-      // animation
-      s.animate([
-        { transform: 'translateY(0) scale(1) rotate(0deg)' },
-        { transform: 'translateY(-18px) scale(1.12) rotate(-6deg)' },
-        { transform: 'translateY(0) scale(1) rotate(0deg)' }
-      ], { duration: 420, easing: 'cubic-bezier(.2,.9,.3,1)' });
-
-      // tiny sparkle confetti for each sticker click
-      confetti({
-        particleCount: 12,
-        spread: 40,
-        origin: { y: 0.8 },
-        scalar: 0.8
-      });
-
-      // mark as collected (simple visual)
-      s.style.filter = 'grayscale(0.1) saturate(1.05)';
-      s.style.boxShadow = '0 10px 28px rgba(200,40,120,0.18)';
-    });
-  });
-
-})();
 </script>
 
 </body>
